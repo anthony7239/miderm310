@@ -10,7 +10,7 @@ body {
     font-family: 'Lato', sans-serif;
     color: palevioletred;
 }
-#container {
+#game {
     display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
     width: 800px;

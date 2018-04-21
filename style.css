@@ -15,9 +15,10 @@ body {
 	grid-template-columns: 1fr 1fr 1fr;
     width: 1000px;
 	margin:0 auto;
+	padding-top: 3em;
 }
 
-img {
+#game img {
     width:300px;
 	height:200px;
 	display:inline-block;
@@ -26,18 +27,15 @@ img {
 
 }
 
-/*
-.box {
-	width:200px;
-	height:200px;
-	display:inline-block;
-	background: blue;
-	margin: 10px;
-	box-sizing: border-box;
+#boom {
+	display: none;
+	width: 100%;
+	padding-top: 3em;
+	
 }
-
-.box img {
-	width:100%;
-	height:100%;
+ #wrong{
+	display: none;
+	
+	padding-top: 3em;
+	
 }
-*/

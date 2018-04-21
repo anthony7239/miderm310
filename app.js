@@ -50,9 +50,7 @@ $(document).ready(function() {
 							let imgContainer = $('<div>')
 								.addClass('gif');
 
-							imgContainer.append(imgElem);
-
-							 $('#game').append(imgContainer);
+							 imgContainer.append(imgElem);							 $('#game').append(imgContainer);
 						}
 					}
 					
@@ -75,7 +73,15 @@ $(document).ready(function() {
 						
 					}); 
 					
-    //	   Onclick the right gif				
+  //	 countdown timer
+			var time = 5;
+			$(function(){
+								
+				function countdown(){
+					var interval = setTimeout(countdown, 1000);
+					$(".timer").html(time);
+					
+  //    Onclick the right gif		
 					$('.gif1').click(function(){
 							if( match == 0 ){				
 							console.log("yes");
@@ -86,34 +92,25 @@ $(document).ready(function() {
 								marginLeft:'auto',
 								marginRight:'auto',
 								width: "600px",
-                                height: "500px"
-																
+                                height: "500px"								
 							}); 
-						 } 
-			    	}); 
+						 } clearTimeout(interval);
+			    	}); 	
 					
-//	countdown timer
-			var time = 5;
-				
-			$(function(){
-								
-				function countdown(){
-					var interval = setTimeout(countdown, 1000);
-					$(".timer").html(time);
-					if(time == 0){
-						console.log("you are lose!")
-						
-					    $('#game').hide();
-						$('#boom').show();
-						clearInterval(interval);
-					}
-					time --;
-				}
-				countdown();
+  //	time out, game over
+					        if(time == 0){
+					        	console.log("you are lose!")
+					        	
+					            $('#game').hide();
+					        	$('#boom').show();
+					        	clearInterval(interval);
+					        }
+					        time --;
+				        }
+				        countdown();
 			
-			});
-					
-					
+			        });
+										
 				});
 			});
 		}

@@ -98,7 +98,9 @@ $(document).ready(function() {
 						 console.log("no");
 						
 						 $('#game').hide();
+						
 					   	 $('#wrong').show();
+						
 						$('#try').show();
 								$('#try').click(function(){
 
@@ -157,7 +159,7 @@ $(document).ready(function() {
 					}
 					move();
 				    $('#myBar').show();	
-
+                     $('#query').hide();
 				
 			
 			        });

@@ -5,19 +5,32 @@
 	<meta charset="utf-8">
 	<link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	
 </head>
 <body>
     <header>
         <h1>Midterm</h1>
     </header>
+	
     <h1>SEARCH FOR A GIF</h1>
-	<center><h2>You have <span class="timer">5</span> second to find out your gif:</h2></center>
+	<center><h2>You have <span class="timer"> 5 </span> second left to find out your gif:</h2></center>
+	
+    <div id="myProgress"><div id="myBar">10%</div></div><br>
+	<div ><embed id="sound" src="Bomb.mp3" autostart="ture" hidden="true" ></div>
+	
     <div id="container">
-        <input type="text" placeholder="Search for a gif" id="query">
+        <input type="text" placeholder="Search for a gif" id="query"><br>
+		
+		<button style="display: none" id="try">Start Over</button>
         <div id="game"></div>
+		
+		<p style="display: none" id="correct">Congratulations! &nbsp; You Got It!</p><br>				
 		<div id="boom"> <img width="700px" height="600px" src="image/boom.png" alt=""> </div>
+		
 		<div id="wrong"> <img width="700px" height="600px" src="image/wrong.png" alt=""> </div>
+				
     </div>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="app.js"></script>
 </body>

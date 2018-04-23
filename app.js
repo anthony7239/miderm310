@@ -1,6 +1,8 @@
 // document ready event
 $(document).ready(function() {
+
 	$('#query').on("keypress", function(event) {
+	
 		if (event.which == 13) {
 						
 			var offset = Math.round(Math.random() * 1000);
@@ -21,7 +23,7 @@ $(document).ready(function() {
 						+ "&limit=8"
 						+ "&offset="
 						+ offset;
-		
+						
 
 			$.getJSON(url, function(json) {
 				$.getJSON(apple, function(appleJson) {
@@ -51,8 +53,9 @@ $(document).ready(function() {
 								.addClass('gif');
 
 							 imgContainer.append(imgElem);							 $('#game').append(imgContainer);
+							
 						}
-					}
+					} 
 					
     //  random the gif position 
 					$(function () {
@@ -62,52 +65,97 @@ $(document).ready(function() {
 									  (divs.splice(Math.floor(Math.random() * divs.length),1)[0]);
                          }
                     });
-					
-   //	Onclick the wrong gif				
-					var match = [];
-					$('.gif').click(function(){
-						
-						 console.log("no");
-						 $('#game').hide();
-					   	 $('#wrong').show();
-						
-					}); 
-					
-  //	 countdown timer
+																			
+																
+ 
 			var time = 5;
 			$(function(){
-								
+							
+			  function move() {
+                       var elem = document.getElementById("myBar");   
+                       var width = 10;
+                       var id = setInterval(frame, 48);
+                       function frame() {
+                         if (width >= 100) {
+                           clearInterval(id);
+                         } else {
+                           width++; 
+                           elem.style.width = width + '%'; 
+                           elem.innerHTML = width * 1  + '%';
+                                              }
+                       }
+                     						
+ //	 countdown timer			
 				function countdown(){
 					var interval = setTimeout(countdown, 1000);
 					$(".timer").html(time);
 					
   //    Onclick the right gif		
+					var match = [];
 					$('.gif1').click(function(){
 							if( match == 0 ){				
 							console.log("yes");
-								
+							$('#correct').show();	
 							$('.gif').hide();
 							$('img').animate({ 
 								display:'block',
-								marginLeft:'auto',
+								marginLeft:'13em',
+								marginTop:'0.1em',
 								marginRight:'auto',
 								width: "600px",
                                 height: "500px"								
 							}); 
+							
+								
 						 } clearTimeout(interval);
+						   clearTimeout(id);
+						   
+						$('#try').show();
+								$('#try').click(function(){
+
+  //	Onclick the wrong gif				
+					
+					$('.gif').click(function(){
+						
+						 console.log("no");
+						
+						 $('#game').hide();
+					   	 $('#wrong').show();
+						
+					}); 
+									
+						location.reload();
+					});
+				
+						
 			    	}); 	
+										
 					
   //	time out, game over
 					        if(time == 0){
 					        	console.log("you are lose!")
 					        	
 					            $('#game').hide();
+								$('#wrong').hide();
 					        	$('#boom').show();
 					        	clearInterval(interval);
+								$('#try').show();
+								$('#try').click(function(){
+									location.reload();
+								});
 					        }
 					        time --;
 				        }
 				        countdown();
+					
+					}
+					move();
+				    $('#myBar').show();	
+//					$("#sound").click(function() {
+//   $("#sound").play();
+//    
+//  });
+				
 			
 			        });
 										
@@ -116,4 +164,12 @@ $(document).ready(function() {
 		}
 	});
 });
+
+
+
+//					$("#sound").click(function() {
+//   $("#sound").play();
+//    
+//  });
+//		
  

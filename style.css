@@ -9,7 +9,28 @@ body {
 	text-align: center;
     font-family: 'Lato', sans-serif;
     color: saddlebrown;
+	
 }
+h1{
+	padding-bottom: 0.2em;
+	padding-top: 0.3em;
+}
+h2 {
+	font-family: Comic Sans MS ;
+	padding-top: 0.2em;
+	font-size: 2em;
+}
+p{
+	padding-top: 0.1em;
+	font-size: 2em;
+}
+
+input{
+    width: 15em;
+	height: 2em;
+
+}
+
 #game {
     display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -37,5 +58,36 @@ body {
 	display: none;
 	
 	padding-top: 3em;
+	
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+
+#myBar {
+	display: none;
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+#sound{
+	display: none;
+}
+
+button {
+	display: block;
+	text-align: center;
+	height: 2em;
+	width: 7em;
+	font-size: 1em;
+	margin-top: 1em;
+	margin-left: 36em;
 	
 }

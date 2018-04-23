@@ -67,7 +67,7 @@ $(document).ready(function() {
                     });
 																			
 																
- 
+ //  progress bar
 			var time = 5;
 			$(function(){
 							
@@ -90,8 +90,27 @@ $(document).ready(function() {
 					var interval = setTimeout(countdown, 1000);
 					$(".timer").html(time);
 					
-  //    Onclick the right gif		
+					
+//	Onclick the wrong gif				
 					var match = [];
+					$('.gif').click(function(){
+						
+						 console.log("no");
+						
+						 $('#game').hide();
+					   	 $('#wrong').show();
+						$('#try').show();
+								$('#try').click(function(){
+
+ 						location.reload();
+					});
+						
+					}); 
+					
+					
+					
+  //    Onclick the right gif		
+					
 					$('.gif1').click(function(){
 							if( match == 0 ){				
 							console.log("yes");
@@ -113,22 +132,9 @@ $(document).ready(function() {
 						$('#try').show();
 								$('#try').click(function(){
 
-  //	Onclick the wrong gif				
-					
-					$('.gif').click(function(){
-						
-						 console.log("no");
-						
-						 $('#game').hide();
-					   	 $('#wrong').show();
-						
-					}); 
-									
-						location.reload();
+ 						location.reload();
 					});
-				
-						
-			    	}); 	
+			   }); 	
 										
 					
   //	time out, game over
@@ -151,10 +157,7 @@ $(document).ready(function() {
 					}
 					move();
 				    $('#myBar').show();	
-//					$("#sound").click(function() {
-//   $("#sound").play();
-//    
-//  });
+
 				
 			
 			        });
@@ -166,10 +169,3 @@ $(document).ready(function() {
 });
 
 
-
-//					$("#sound").click(function() {
-//   $("#sound").play();
-//    
-//  });
-//		
- 
